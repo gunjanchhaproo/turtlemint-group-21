@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{keypost}}
+    <form class="text-center">
+        {% csrf_token %}
+        {{keypost}}
+        <label for="">Choose Car:</label>  
+        
+
+        <select name="" id="">
+            <option value=""></option>
+            {% for i in keyposts %}
+            <option value="">{{i.carName}}</option>
+            {{i.carName}}
+            {% endfor %}
+
+        </select>
+       
+        <label for="">Choose Variant:</label>
+        <select name="" id="">
+            <option value=""></option>
+            {% for i in keyposts %}
+           
+            <option value="">{{i.variantOfCar}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="">Choose Registration Year:</label>
+        <select name="" id="">
+            <option value=""></option>
+            {% for i in keyposts %}
+           
+            <option value="">{{i.registrationYear}}</option>
+            {% endfor %}
+        </select>
+
+        <a href="{% url 'home'%}" class="btn btn-primary">Show Quotes</a>
+
+    </form>
+</body>
+</html>
